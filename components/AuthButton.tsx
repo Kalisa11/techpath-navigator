@@ -1,40 +1,35 @@
-import { createClient } from '@/utils/supabase/server'
-import Link from 'next/link'
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
+"use client";
 
-export default async function AuthButton() {
-  const cookieStore = cookies()
-  const supabase = createClient(cookieStore)
+import { useEffect } from "react";
+import { LoginDialog } from "@/components/LoginDialog";
+import { loggedInUser } from "@/utils/currentUser";
+import { User } from "@supabase/supabase-js";
+import useUserStore from "@/store/user";
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+export default function AuthButton() {
+  const { setUser, user } = useUserStore();
 
-  const signOut = async () => {
-    'use server'
-
-    const cookieStore = cookies()
-    const supabase = createClient(cookieStore)
-    await supabase.auth.signOut()
-    return redirect('/login')
-  }
+  useEffect(() => {
+    async function getUser() {
+      const user = await loggedInUser();
+      setUser(user as User);
+    }
+    getUser();
+  }, [setUser]);
+  console.log({ user });
 
   return user ? (
-    <div className="flex items-center gap-4">
-      Hey, {user.email}!
-      <form action={signOut}>
-        <button className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover">
-          Logout
-        </button>
-      </form>
+    <div className="flex items-center gap-4 text-sm">
+      <img
+        src={
+          user?.user_metadata.avatar_url ||
+          "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
+        }
+        alt="profile"
+        className="rounded-full w-10 h-10"
+      />
     </div>
   ) : (
-    <Link
-      href="/login"
-      className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
-    >
-      Login
-    </Link>
-  )
+    <LoginDialog />
+  );
 }
