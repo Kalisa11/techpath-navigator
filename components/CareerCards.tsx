@@ -13,7 +13,7 @@ const CareerCards = () => {
     async function fetchCareers() {
       try {
         const response = await fetch("/api/careers", {
-          // cache: "no-store",
+          cache: "no-store",
         });
         const careersData = await response.json();
         setCareers(careersData);
