@@ -19,6 +19,9 @@ export function LoginDialog() {
   async function signInWithGoogle() {
     const { error } = await supabaseClient.auth.signInWithOAuth({
       provider: "google",
+      options: {
+        redirectTo: window.location.origin,
+      },
     });
   }
 
