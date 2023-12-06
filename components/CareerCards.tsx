@@ -57,9 +57,7 @@ const CareerCards = () => {
         <img
           src={career.image}
           alt="career image"
-          width={400}
-          height={400}
-          className="rounded-md"
+          className="rounded-md h-[120px] w-[200px] object-cover"
         />
         <div className="text-base text-left font-semibold hover:text-primary">
           {career.name}

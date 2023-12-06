@@ -48,8 +48,8 @@ export function LoginDialog() {
         </Button>
         <DialogFooter>
           <div className="text-xs">
-            By creating an account, you agree to our Terms of Service and
-            Privacy Policy.
+            By creating an account, you agree to our Terms of
+            Service and Privacy Policy.
           </div>
         </DialogFooter>
       </DialogContent>
