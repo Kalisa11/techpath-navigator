@@ -18,6 +18,7 @@ const Sidebar = () => {
       console.log(error);
       return;
     }
+    window.location.reload();
   };
   return (
     <div className="w-1/6 font-semibold border-r-2 text-slate-600 text-sm bg-white h-screen p-4 sticky left-0 inset-y-0">
