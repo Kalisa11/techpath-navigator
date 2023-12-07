@@ -17,7 +17,6 @@ export default function AuthButton() {
     }
     getUser();
   }, [setUser]);
-  console.log({ user });
 
 return (
     <div>
