@@ -3,14 +3,13 @@
 import {
   Compass,
   Computer,
-  HelpCircle,
   LayoutDashboard,
   LogOut,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import { supabaseClient } from "@/utils/supabase/supabaseClient";
 import { signOut } from "@/utils/signOut";
+import { Feedback } from "@/components/Dialogs/Feedback";
 
 const Sidebar = () => {
   return (
@@ -34,10 +33,7 @@ const Sidebar = () => {
       </div>
       {/* bottom div */}
       <div className="absolute flex flex-col items-center justify-center bottom-1 space-y-2">
-        <div className="flex items-center gap-4 rounded-md hover:bg-gray-100 py-3 px-4 cursor-pointer w-full">
-          <HelpCircle size={18}/>
-          Help
-        </div>
+        <Feedback />
         <button
           onClick={signOut}
           className="flex items-center gap-4 rounded-md hover:bg-gray-100 py-3 px-4 cursor-pointer w-full "

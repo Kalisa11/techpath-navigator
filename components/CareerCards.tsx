@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Skeleton } from "./ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import { FaStar } from "react-icons/fa";
+import { useCareerStore, useLoadingCareerStore } from "@/store/careers";
+import { useSelectSkillStore } from "@/store/selectedSkills";
 
 const CareerCards = () => {
-  const [careers, setCareers] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { careers, setCareers } = useCareerStore();
+  const { selectedSkills } = useSelectSkillStore();
+  const { loading, setLoading } = useLoadingCareerStore();
 
   useEffect(() => {
     async function fetchCareers() {
@@ -23,7 +26,9 @@ const CareerCards = () => {
         setLoading(false);
       }
     }
-    fetchCareers();
+    if (selectedSkills.length === 0) {
+      fetchCareers();
+    }
   }, []);
 
   const renderSkeleton = (count: number) => {
@@ -57,7 +62,7 @@ const CareerCards = () => {
         <img
           src={career.image}
           alt="career image"
-          className="rounded-md h-[120px] w-[200px] object-cover"
+          className="rounded-md h-[120px] w-[230px] object-cover"
         />
         <div className="text-base text-left font-semibold hover:text-primary">
           {career.name}
@@ -75,10 +80,10 @@ const CareerCards = () => {
   );
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-8 py-5">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 px-8 py-5">
       {loading
-        ? renderSkeleton(Math.max(8, careers.length))
-        : careers.map(renderCareer)}
+        ? renderSkeleton(Math.max(8, careers ? careers?.length : 0))
+        : careers?.map(renderCareer)}
     </div>
   );
 };

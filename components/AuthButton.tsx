@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { LoginDialog } from "@/components/LoginDialog";
+import { LoginDialog } from "@/components/Dialogs/Login";
 import { loggedInUser } from "@/utils/currentUser";
 import { User } from "@supabase/supabase-js";
 import useUserStore from "@/store/user";

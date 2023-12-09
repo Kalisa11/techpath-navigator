@@ -3,7 +3,10 @@ import { NextResponse } from "next/server";
 import supabase from "@/utils/supabase/supabaseClient";
 
 const getSkills = async () => {
-  const { data, error } = await supabase.from("skills").select("*");
+  const { data, error } = await supabase
+    .from("skills")
+    .select("*")
+    .order("name");
   if (error) {
     console.log("error", error);
   }
