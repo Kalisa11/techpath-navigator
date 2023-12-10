@@ -1,12 +1,11 @@
+import { toast } from "@/components/ui/use-toast";
 import { useCareerStore, useLoadingCareerStore } from "@/store/careers";
-// import { supabaseClient } from "./supabase/supabaseClient";
 
 export default function useFetchCareers() {
   const { setCareers } = useCareerStore();
   const { setLoading } = useLoadingCareerStore();
 
   const fetchCareers = async (skills: string[]) => {
-    console.log({ skills });
     try {
       setLoading(true);
       const response = await fetch("/api/fetchCareers", {
@@ -20,13 +19,34 @@ export default function useFetchCareers() {
         },
       });
       const data = await response.json();
-      console.log("data uyttyui", data);
-    } catch (error) {
-      console.log("error in hook", error);
+      setCareers(data);
+    } catch (error: any) {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: error.message,
+      });
     } finally {
       setLoading(false);
     }
-    // setCareers(data);
   };
-  return { fetchCareers };
+
+  async function fetchAllCareers() {
+    try {
+      setLoading(true);
+      const response = await fetch("/api/careers");
+      const careersData = await response.json();
+      setCareers(careersData);
+    } catch (error: any) {
+      console.error("Error fetching careers:", error);
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: error.message,
+      });
+    } finally {
+      setLoading(false);
+    }
+  }
+  return { fetchCareers, fetchAllCareers };
 }

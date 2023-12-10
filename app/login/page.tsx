@@ -15,21 +15,6 @@ export default function Login() {
     });
   };
 
-  const signUp = async () => {
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${origin}/auth/callback`,
-      },
-    });
-
-    if (error) {
-      console.log(error);
-      return;
-    }
-  };
-
   return (
     <div className="flex-1 flex flex-col w-full items-center px-8 sm:max-w-md justify-center gap-2">
       <form className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground">

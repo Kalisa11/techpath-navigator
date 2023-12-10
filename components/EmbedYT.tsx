@@ -5,7 +5,7 @@ import getYouTubeID from "get-youtube-id";
 
 export default function EmbedYT({ link }: { link: string }) {
   const opts: YouTubeProps["opts"] = {
-    height: "150",
+    height: "200",
     width: "410",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters

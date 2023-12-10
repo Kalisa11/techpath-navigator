@@ -84,6 +84,11 @@ const CareerCards = () => {
       {loading
         ? renderSkeleton(Math.max(8, careers ? careers?.length : 0))
         : careers?.map(renderCareer)}
+      {careers?.length === 0 && (
+        <div className="flex items-center text-gray-600 ">
+          No careers found
+        </div>
+      )}
     </div>
   );
 };

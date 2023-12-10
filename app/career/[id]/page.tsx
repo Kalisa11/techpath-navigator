@@ -10,11 +10,17 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 const CareerPage = async ({ params }: { params: { id: string } }) => {
   const { data, error } = await supabaseClient
     .from("careers")
-    .select("*")
+    .select(`*, career_skills(skill_id)`)
     .eq("id", params.id);
 
   const careerData: any = data ? data[0] : null;
-
+  const { data: career_skills } = await supabaseClient
+    .from("skills")
+    .select("name")
+    .in(
+      "id",
+      careerData?.career_skills.map((skill: any) => skill.skill_id)
+    );
   function extractJobTitles(job_title: string) {
     const jobTitles = job_title.split(",");
     return jobTitles;
@@ -27,7 +33,7 @@ const CareerPage = async ({ params }: { params: { id: string } }) => {
     }
     return stars;
   };
-  console.log(careerData);
+
   return (
     <div className="bg-slate-100 min-h-screen flex">
       <Sidebar />
@@ -61,6 +67,17 @@ const CareerPage = async ({ params }: { params: { id: string } }) => {
                   </div>
                 ))}
               </div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <div className="font-semibold pr-2">Skills required</div>
+                {career_skills?.slice(0, 3).map((skill, index) => (
+                  <div
+                    key={index}
+                    className="rounded-md text-center border px-2 py-1 bg-white whitespace-nowrap"
+                  >
+                    {skill.name}
+                  </div>
+                ))}
+              </div>
               <div className="flex items-center gap-2">
                 <div className="font-semibold pr-2">Demand</div>
                 <div className="flex items-center">
@@ -90,7 +107,7 @@ const CareerPage = async ({ params }: { params: { id: string } }) => {
               </Button>
             </div>
             {/* resources links */}
-            <div className="flex flex-col items-center gap-1">
+            <div className="flex flex-col items-center gap-3">
               {careerData?.resources &&
                 careerData.resources.map((resource: string, index: number) => (
                   <EmbedYT key={index} link={resource} />
