@@ -20,6 +20,38 @@ The TechPath Navigator platform aims to address this challenge by providing pers
 - **Resource Library:** Curate a repository of resources to assist graduates in enhancing their skills and knowledge base.
 - **Personalized Job Recommendations:** Suggest job opportunities tailored to individual profiles and skill sets, facilitating smoother transitions into the workforce.
 
+### Benefits
+
+- **Personalized Career Guidance:** Empower graduates to make informed career decisions based on their skills, interests, and the African tech landscape.
+- **Enhanced Employability:** Bridge skills gaps and increase graduates' chances of securing employment in their desired tech careers.
+- **Informed Career Progression:** Provide graduates with the insights and resources needed to navigate the African tech landscape and advance their careers.
+
+### How to Use
+
+1. Create an account and provide your basic information, skills, and interests.
+2. Access your personalized career recommendations and explore the comprehensive career information library.
+3. Utilize the skill assessment tools to identify your strengths and areas for improvement.
+4. Leverage the resource library to enhance your skills and knowledge base.
+5. Apply for job opportunities tailored to your profile and skill set.
+
+### Authors
+
+- Kalisa Honore
+- Eldad Gishinge
+- Niwenizeye Mugisha Blaine
+- Bryan Aurel Bakongo Bwemou
+- Ange Marie Iradukunda
+- Maxime Mukunzi
+
+### Get Involved
+
+We are committed to building a thriving tech ecosystem in Africa. If you are interested in collaborating with us on the TechPath Navigator project, please reach out to us at [n.blaine@alustudent.com]
+
+### Contributing
+
+We welcome contributions from the community to the TechPath Navigator project. To learn more about how to contribute, please visit our GitHub repository: [TechPath Navigator Repository](https://github.com/honorekalisa/techpath-navigator).
+
+
 ## Demo
 
 You can view a fully working demo at (https://techpath-navigator.vercel.app/).
@@ -70,13 +102,3 @@ If you wish to just develop locally and not deploy to Vercel, [follow the steps 
    The starter kit should now be running on [localhost:3000](http://localhost:3000/).
 
 > Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
-
-## Feedback and issues
-
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
-
-## More Supabase examples
-
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
