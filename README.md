@@ -1,39 +1,26 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+[![TechPath Navigator ](./cover_pic.png)]
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+## Revolutionizing Tech Careers in Africa
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+### Problem Statement
 
-## Features
+The tech industry in Africa is rapidly growing and evolving, presenting abundant opportunities for aspiring professionals. However, the lack of adequate career guidance can lead to misinformed decisions and skills mismatches, hindering career growth.
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+### Solution
+
+The TechPath Navigator platform aims to address this challenge by providing personalized career guidance to African tech graduates. The platform leverages a matching algorithm to analyze user skills and interests against industry data, offering tailored career recommendations, skill assessment tools, and comprehensive career information.
+
+### Features
+
+- **Skill Assessment:** Assess individual skills and competencies to match graduates with suitable career paths and job opportunities.
+- **Industry Trends Analysis:** Provide insights into evolving industry trends to ensure graduates stay updated with the dynamic tech sector.
+- **Comprehensive Career Information:** Offer detailed information about various career paths, roles, and opportunities available within the African tech industry.
+- **Resource Library:** Curate a repository of resources to assist graduates in enhancing their skills and knowledge base.
+- **Personalized Job Recommendations:** Suggest job opportunities tailored to individual profiles and skill sets, facilitating smoother transitions into the workforce.
 
 ## Demo
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+You can view a fully working demo at (https://techpath-navigator.vercel.app/).
 
 ## Deploy to Vercel
 
