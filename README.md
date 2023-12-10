@@ -1,4 +1,6 @@
-[![TechPath Navigator ](./cover_pic.png)]
+# TechPath Navigator
+
+![TechPath Navigator ](./cover_pic2.png)
 
 ## Revolutionizing Tech Careers in Africa
 
